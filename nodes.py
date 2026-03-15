@@ -173,6 +173,11 @@ def auto_download_checkpoint():
         filename="model.safetensors",
         local_dir=DVD_MODEL_DIR,
     )
+    # Clean up HF download cache
+    cache_dir = os.path.join(DVD_MODEL_DIR, ".cache")
+    if os.path.exists(cache_dir):
+        import shutil
+        shutil.rmtree(cache_dir)
     print("[DVD] Checkpoint downloaded successfully")
 
 

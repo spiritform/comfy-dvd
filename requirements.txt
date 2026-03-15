@@ -1,0 +1,8 @@
+omegaconf>=2.3.0
+peft>=0.18.0
+accelerate>=1.9.0
+safetensors
+einops
+sentencepiece
+matplotlib
+imageio[ffmpeg]

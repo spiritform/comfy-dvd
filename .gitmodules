@@ -1,0 +1,3 @@
+[submodule "dvd_repo"]
+	path = dvd_repo
+	url = https://github.com/EnVision-Research/DVD.git

@@ -42,12 +42,9 @@ git clone --recursive https://github.com/spiritform/comfy-dvd.git ComfyUI-DVD-De
 pip install omegaconf peft accelerate safetensors einops sentencepiece matplotlib modelscope pandas "imageio[ffmpeg]"
 ```
 
-3. Download the DVD checkpoint (~4.5GB):
-```bash
-huggingface-cli download FayeHongfeiZhang/DVD model.safetensors --local-dir ComfyUI/models/dvd_depth
-```
-
-The Wan2.1-T2V-1.3B base weights will auto-download from HuggingFace on first run.
+All model weights download automatically on first run:
+- **DVD checkpoint** (~4.5GB) from [HuggingFace](https://huggingface.co/FayeHongfeiZhang/DVD)
+- **Wan2.1-T2V-1.3B base weights** (DiT + VAE) from HuggingFace
 
 ## Node: DVD Depth
 

@@ -6,6 +6,14 @@ Based on the paper ["Video Diffusion Models are Overqualified Depth Estimators"]
 
 ![ComfyUI DVD Depth Node](screenshot.png)
 
+## About DVD
+
+DVD repurposes the Wan2.1 video diffusion model as a depth estimator. Instead of iterative denoising, it runs a single deterministic forward pass to predict depth — making it fast and temporally stable.
+
+Learn more: [Project Page](https://dvd-project.github.io/) | [Paper](https://github.com/EnVision-Research/DVD) | [Model](https://huggingface.co/FayeHongfeiZhang/DVD)
+
+![DVD Paper Results](https://github.com/EnVision-Research/DVD/raw/main/assets/teaser.png)
+
 ## Features
 
 - **Single-pass depth estimation** — no iterative denoising, just one forward pass through the DiT

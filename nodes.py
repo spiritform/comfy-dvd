@@ -161,10 +161,26 @@ def generate_depth_sliced(model, input_rgb, window_size=45, overlap=9, pbar=None
     return depth_list_aligned[:, :T]
 
 
+def auto_download_checkpoint():
+    """Download DVD checkpoint if not present."""
+    ckpt_path = os.path.join(DVD_MODEL_DIR, "model.safetensors")
+    if os.path.exists(ckpt_path):
+        return
+    print("[DVD] Checkpoint not found — downloading from HuggingFace (~4.5GB)...")
+    from huggingface_hub import hf_hub_download
+    hf_hub_download(
+        repo_id="FayeHongfeiZhang/DVD",
+        filename="model.safetensors",
+        local_dir=DVD_MODEL_DIR,
+    )
+    print("[DVD] Checkpoint downloaded successfully")
+
+
 def get_or_load_model(checkpoint):
     """Load model with caching — only reloads if checkpoint changes."""
     global _dvd_model_cache
 
+    auto_download_checkpoint()
     ckpt_path = folder_paths.get_full_path("dvd_depth", checkpoint)
 
     if _dvd_model_cache["model"] is not None and _dvd_model_cache["ckpt"] == ckpt_path:

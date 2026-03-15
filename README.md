@@ -4,7 +4,7 @@ A ComfyUI custom node for **DVD (Deterministic Video Depth)** — single-pass, t
 
 Based on the paper ["Video Diffusion Models are Overqualified Depth Estimators"](https://dvd-project.github.io/) by EnVision Research.
 
-![DVD Depth Output](https://github.com/EnVision-Research/DVD/raw/main/assets/teaser.png)
+![ComfyUI DVD Depth Node](screenshot.png)
 
 ## Features
 
